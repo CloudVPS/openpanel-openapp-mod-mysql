@@ -1,0 +1,23 @@
+#!/bin/bash
+. /var/openpanel/api/sh/module.sh
+
+MysqlAdmin.update() {
+  appid=mysql
+  newpass=$(coreval MysqlAdmin password)
+  authd runscript openapp-call "$appid" passwd "$newpass"
+}
+
+Module.getconfig() {
+  cat << _EOF_
+  <openpanel.module>
+    <dict id="MysqlAdmin" type="class">
+      <dict id="Admin">
+	    <string id="password">*</string>
+      </dict>
+    </dict>
+  </openpanel.module>
+_EOF_
+  exitquiet
+}
+
+implement OpenAppMysql.module

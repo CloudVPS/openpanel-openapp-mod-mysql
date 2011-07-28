@@ -1,0 +1,53 @@
+# ============================================================================
+# This file is part of OpenPanel - The Open Source Control Panel
+# OpenPanel is free software: you can redistribute it and/or modify it 
+# under the terms of the GNU General Public License as published by the Free 
+# Software Foundation, using version 3 of the License.
+#
+# Please note that use of the OpenPanel trademark may be subject to additional 
+# restrictions. For more information, please visit the Legal Information 
+# section of the OpenPanel website on http://www.openpanel.com/
+#
+# OpenPanel OpenAppMysql.module for setting the admin password
+# ============================================================================
+module OpenAppMysql					< uuid 12086011-ce58-495f-9fb5-0c371adb275b
+								< version 1.0
+								< languages en_EN
+								< apitype commandline
+								< getconfig true
+								< license GPLv3
+								< author OpenPanel
+								< url http://www.openpanel.com/
+	
+# ============================================================================
+# CLASSES
+# ============================================================================
+class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
+								< version 1
+								< indexing manual
+								< uniquein class
+								< shortname mysqladmin
+								< singleton Admin
+								< title Mysql admin
+								< description Mysql admin password
+								< sortindex 10
+								< icon user.png
+							
+								< capabilities update
+								< listview id emailaddress
+								< required id password emailaddress
+
+	string id					: Username
+								< example Admin
+								< textwidth 16
+								
+	password password			: Password
+								< textwidth 16
+								< example sPswd13t
+								< regexp [:password:]
+
+# ============================================================================
+# AUTHD
+# ============================================================================
+authd scripts
+	script	openapp-call
