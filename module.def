@@ -54,8 +54,8 @@ class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
 # ENUMS
 # ============================================================================
 enum backupmethod
-	value Mysqldump : Mysqldump
-	value Xtrabackup (Requires manual install): Xtrabackup
+	value Mysqldump : mysqldump
+	value Xtrabackup (Requires manual install): xtrabackup
 
 # ============================================================================
 # AUTHD
