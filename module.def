@@ -27,7 +27,7 @@ class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
 								< indexing manual
 								< uniquein class
 								< shortname mysqladmin
-								< singleton Admin
+								< singleton openapp-mysql-settings
 								< title Mysql admin
 								< description Mysql admin password
 								< sortindex 10
