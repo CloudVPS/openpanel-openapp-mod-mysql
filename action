@@ -5,7 +5,7 @@ MysqlAdmin.update() {
   appid=mysql
   newpass=$(coreval MysqlAdmin password)
   method=$(coreval MysqlAdmin backupmethod)
-  authd runscript openapp-call "$appid" passwd "$newpass"
+  [ ! -z ${newpass} ] &&  authd runscript openapp-call "$appid" passwd "$newpass"
   authd runscript openapp-call "$appid" backupmethod "$method"
 }
 
