@@ -12,12 +12,13 @@ MysqlAdmin.update() {
 Module.getconfig() {
 METHOD=mysqldump
 
-[ -r /etc/openapp-backup/scripts.d/xtrabackup ] && METHOD=xtrabackup
+CHECKLOC=/etc/openapp-backup/scripts.d/xtrabackup
+[ -L ${CHECKLOC} -o -f ${CHECKLOC} ] && METHOD=xtrabackup
 
   cat << _EOF_
   <openpanel.module>
     <dict id="MysqlAdmin" type="class">
-      <dict id="openapp-mysql-settings">
+      <dict id="openapp-mysql-settings" type="object">
 	    <enum id="backupmethod">${METHOD}</enum>
       </dict>
     </dict>
