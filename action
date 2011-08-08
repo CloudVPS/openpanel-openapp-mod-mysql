@@ -6,7 +6,7 @@ MysqlAdmin.update() {
   newpass=$(coreval MysqlAdmin password)
   method=$(coreval MysqlAdmin backupmethod)
   [ ! -z ${newpass} ] &&  authd runscript openapp-call "$appid" passwd "$newpass"
-  [ -x /usr/bin/openapp-mysql-backupmethod ] && authd runscript openapp-call "$appid" backupmethod "$method"
+  if [ -x /usr/bin/openapp-mysql-backupmethod ]; then authd runscript openapp-call "$appid" backupmethod "$method"; fi
 }
 
 Module.getconfig() {
