@@ -41,7 +41,7 @@ class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
 								< example Admin
 								< textwidth 16
 								
-	password password			: Password
+	password password			: Password for phpmyadmin (User openapp)
 								< textwidth 16
 								< example sPswd13t
 								< regexp [:password:]
