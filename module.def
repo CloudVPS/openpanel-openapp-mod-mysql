@@ -31,7 +31,7 @@ class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
 								< title Mysql
 								< description Mysql admin password
 								< sortindex 10
-								< icon user.png
+								< icon mysql.png
 							
 								< capabilities update
 								< listview id emailaddress
