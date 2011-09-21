@@ -27,6 +27,7 @@ class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
 								< indexing manual
 								< uniquein class
 								< shortname mysqladmin
+                                < explanation mysql.html
 								< singleton openapp-mysql-settings
 								< title Mysql
 								< description Mysql admin password
@@ -41,7 +42,7 @@ class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
 								< example Admin
 								< textwidth 16
 								
-	password password			: Password for phpmyadmin (User openapp)
+	password password			: Password for phpMyAdmin
 								< textwidth 16
 								< example sPswd13t
 								< regexp [:password:]
@@ -55,7 +56,7 @@ class MysqlAdmin					< uuid 3ac861bb-7539-43d9-ace1-45354727ca9a
 # ============================================================================
 enum backupmethod
 	value mysqldump : Mysqldump
-	value xtrabackup : Xtrabackup (Requires manual install)
+	value xtrabackup : Xtrabackup
 
 # ============================================================================
 # AUTHD
