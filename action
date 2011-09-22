@@ -2,7 +2,7 @@
 . /var/openpanel/api/sh/module.sh
 
 MysqlAdmin.update() {
-  appid=mysql
+  appid=phpmyadmin
   newpass=$(coreval MysqlAdmin password)
   method=$(coreval MysqlAdmin backupmethod)
   [ ! -z ${newpass} ] &&  authd runscript openapp-call "$appid" passwd "$newpass"
