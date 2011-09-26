@@ -26,11 +26,16 @@ set -e
 # the debian-policy package
 #
 
-dpkg-divert --package openpanel-openapp-mod-mysql --remove --rename \
+WP_PACKAGE=$(dpkg-divert --listpackage /var/openpanel/wallpaper/default.jpg)
+OL_PACKAGE=$(dpkg-divert --listpackage /var/openpanel/http/images/OpenPanelLogo.png)
+
+[ "$WP_PACKAGE" = "openpanel-openapp-mod-mysql" ] && dpkg-divert \
+    --package openpanel-openapp-mod-mysql --remove --rename \
 	--divert /var/openpanel/wallpaper/default.jpg.real \
 		 /var/openpanel/wallpaper/default.jpg
 
-dpkg-divert --package openpanel-openapp-mod-mysql --remove --rename \
+[ "$OL_PACKAGE" = "openpanel-openapp-mod-mysql" ] && dpkg-divert \
+    --package openpanel-openapp-mod-mysql --remove --rename \
 	--divert /var/openpanel/http/images/OpenPanelLogo.png.real \
 		 /var/openpanel/http/images/OpenPanelLogo.png
 
